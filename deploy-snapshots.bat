@@ -1,1 +1,1 @@
-mvn deploy -DrepositoryId=sonatype-release -Dmaven.test.skip=true -Dfile.encoding=UTF-8  -X >deploy-snapshots.log 
+mvn javadoc:jar source:jar deploy -DrepositoryId=sonatype-release -Dmaven.test.skip=true -Dfile.encoding=UTF-8  -X >deploy-snapshots.log 
