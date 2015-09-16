@@ -15,46 +15,8 @@
     <name>com.github.superproxy:test-data-provider</name>
     <description>Test Data Provider</description>
     <url>https://github.com/superproxy/test-data-provider</url>
-
-    <licenses>
-        <license>
-            <name>The Apache License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-        </license>
-    </licenses>
-
-
-    <developers>
-        <developer>
-            <name>sharpcoder</name>
-            <email>sharpcoder@qq.com</email>
-            <organization>superproxy</organization>
-            <organizationUrl>http://superproxy.github.io</organizationUrl>
-        </developer>
-    </developers>
-
-    <scm>
-        <connection>
-            scm:git:https://github.com/superproxy/test-data-provider.git
-        </connection>
-        <developerConnection>
-            scm:git:https://github.com/superproxy/test-data-provider.git
-        </developerConnection>
-        <url>https://github.com/superproxy/test-data-provider</url>
-    </scm>
-
-    <distributionManagement>
-        <snapshotRepository>
-            <id>sonatype-snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>sonatype-release</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
-
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <sonar.language>java</sonar.language>
         <sonar.java.coveragePlugin>cobertura</sonar.java.coveragePlugin>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -67,6 +29,7 @@
         <sonar.cobertura.reportPath>target/site/cobertura/coverage.xml</sonar.cobertura.reportPath>
         <powermock.version>1.6.2</powermock.version>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.testng</groupId>
@@ -176,6 +139,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
                 <version>1.5</version>
+                <configuration>
+                </configuration>
                 <executions>
                     <execution>
                         <id>sign-artifacts</id>
@@ -204,4 +169,41 @@
             <url>http://repository.codehaus.org/</url>
         </pluginRepository>
     </pluginRepositories>
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+
+    <developers>
+        <developer>
+            <name>sharpcoder</name>
+            <email>sharpcoder@qq.com</email>
+            <organization>superproxy</organization>
+            <organizationUrl>http://superproxy.github.io</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>
+            scm:git:https://github.com/superproxy/test-data-provider.git
+        </connection>
+        <developerConnection>
+            scm:git:https://github.com/superproxy/test-data-provider.git
+        </developerConnection>
+        <url>https://github.com/superproxy/test-data-provider</url>
+    </scm>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>sonatype-snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>sonatype-release</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
 </project>
