@@ -10,8 +10,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -107,12 +105,12 @@ public class JsonDataProvider implements DataProvider {
         StringBuilder sb = new StringBuilder();
         try {
             LOGGER.debug("path:{}", new File(".").getAbsolutePath());
-            Scanner scanner = new Scanner(new FileInputStream(filePath));
+            Scanner scanner = new Scanner(JsonDataProvider.class.getResourceAsStream(filePath));
 
             while (scanner.hasNext()) {
                 sb.append(scanner.nextLine());
             }
-        } catch (FileNotFoundException e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
 

@@ -37,7 +37,6 @@ public class CommonDataProvider {
     @org.testng.annotations.DataProvider
     public static Object[][] genData(Method method) {
         Annotation[] annotations = method.getAnnotations();
-
         MethodContext methodContext = testObject(annotations);
         LOGGER.debug("methodContext:{}", methodContext);
         for (Annotation annotation : annotations) {

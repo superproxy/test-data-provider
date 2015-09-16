@@ -9,4 +9,5 @@ import static java.lang.annotation.ElementType.METHOD;
 @Target({METHOD})
 public @interface Csv {
     String value() default "";
+    String encoding() default "";
 }

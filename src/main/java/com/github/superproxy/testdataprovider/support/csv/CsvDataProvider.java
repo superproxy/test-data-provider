@@ -8,7 +8,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -16,6 +15,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class CsvDataProvider implements DataProvider {
+
     @Override
     public Class getDataType() {
         return Csv.class;
@@ -32,21 +32,32 @@ public class CsvDataProvider implements DataProvider {
             if (StringUtils.isNoneEmpty(path)) {
                 methodContext.setPath(path);
             }
+
+            String encoding = ((Csv) annotation).encoding();
+            methodContext.setEncoding(encoding);
         }
-        String filePath = methodContext.getPath();
         try {
-            return getObjects(filePath, method);
+            return getObjects(methodContext, method);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
-    private static Object[][] getObjects(String filePath, Method method) throws Exception {
+    private static Object[][] getObjects(MethodContext methodContext, Method method) throws Exception {
+        String filePath = methodContext.getPath();
+        String encoding = methodContext.getEncoding();
         LOGGER.debug("path:{}", new File(".").getAbsolutePath());
-        Scanner scanner = new Scanner(new FileInputStream(filePath), "UTF-8");
+        Scanner scanner;
+
+        if (StringUtils.isEmpty(encoding)) {
+            scanner = new Scanner(CsvDataProvider.class.getResourceAsStream(filePath));  // 默认自动识别编码的
+        } else {
+//            scanner = new Scanner(new FileInputStream(filePath), encoding);
+            scanner = new Scanner(CsvDataProvider.class.getResourceAsStream(filePath), encoding);  // 默认自动识别编码的
+
+        }
         // 第一行
         String head = scanner.nextLine();
-
         LOGGER.debug("head:{}", head);
         String[] paramNames = MethodUtils.getParameterNames(method);
 //        int paramCount = head.split(",").length;

@@ -1,1 +1,1 @@
-mvn javadoc:jar source:jar deploy -DrepositoryId=sonatype-release -Dmaven.test.skip=true -Dfile.encoding=UTF-8  -X >deploy-releases.log 
+mvn  deploy -DrepositoryId=sonatype-release -Dmaven.test.skip=true -Dfile.encoding=UTF-8 -Dgpg.passphrase -X >deploy-releases.log 

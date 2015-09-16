@@ -8,6 +8,16 @@ import java.lang.reflect.Method;
 
 public class MethodContext implements Serializable {
     private String path;
+
+    public String getEncoding() {
+        return encoding;
+    }
+
+    public void setEncoding(String encoding) {
+        this.encoding = encoding;
+    }
+
+    private String encoding;
     private transient Method method;
     private transient Annotation annotation;
 
