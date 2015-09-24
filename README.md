@@ -1,11 +1,11 @@
 ### Test-Data-Provider
-  Extends the future of data provider supported byt Testng.    
+  Extends the future of data provider supported by Testng.    
 ### Future
-* support csv file format   
-* support json file format   
+* Support csv file format   
+* Support json file format   
 
 #### Usage
-#####1. add depencey   
+#####1. Add the dependency   
 ```
 <dependency>     
     <groupId>com.github.superproxy</groupId>    
@@ -14,7 +14,7 @@
 </dependency>    
 ```
 
-####2. design use case and input the test data into a csv file or a json file. <br/>
+####2. Design a use case and input the following test data into a csv file or a json file. <br/>
 ```
 age,expected
 9,0 
@@ -24,7 +24,7 @@ age,expected
 100,3
 ```
 
-####3. add annotion on a test  
+####3. Add the @Csv annotion on a test  and set dataProviderClass=CommonDataProvider.class and set dataProvider= genData
   ```
     @Test(dataProvider = "genData", dataProviderClass = CommonDataProvider.class) 
     @Csv("/service/UserService/testCalRank.csv")  
