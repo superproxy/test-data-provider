@@ -1,16 +1,16 @@
- #Test-Framework
-  Extends the future of data provider supported byt Testng. <br/>
- #Future
-support csv file format <br/>
-support json file format <br/>
+ ##Test-Framework
+  Extends the future of data provider supported byt Testng.    
+ ##Future
+support csv file format   
+support json file format   
 
-#usage
-#####1. add depencey <br/>
-<dependency>   <br/>
-<groupId>com.github.superproxy</groupId>  <br/>
-<artifactId>test-data-provider</artifactId>  <br/>
-<version>0.1.0</version>  <br/>
-</dependency>  <br/>
+##usage
+#####1. add depencey   
+<dependency>     
+<groupId>com.github.superproxy</groupId>    
+<artifactId>test-data-provider</artifactId>    
+<version>0.1.0</version>    
+</dependency>    
 
 ####2. design use case and input the test data into a csv file or a json file. <br/>
 age,expected  <br/>
