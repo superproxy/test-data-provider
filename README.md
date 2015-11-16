@@ -1,6 +1,6 @@
 ### Test-Data-Provider
-  Extends the future of data provider supported by Testng.    
-### Future
+  Extends the feture of data provider supported by Testng.    
+### Feture
 * Support csv file format   
 * Support json file format   
 
